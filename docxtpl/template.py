@@ -226,6 +226,10 @@ class DocxTemplate(object):
                     .replace(u"’", u"'"))
         src_xml = re.sub(r'(?<=\{[\{%])(.*?)(?=[\}%]})', clean_tags, src_xml)
 
+        # add missing namespace
+        src_xml = src_xml.replace(
+            'w:body xmlns:w',
+            'w:body xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:w')
         return src_xml
 
     def render_xml_part(self, src_xml, part, context, jinja_env=None):

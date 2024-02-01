@@ -2,6 +2,8 @@
 python-docx-template
 ====================
 
+This fork fixes an issue with the image namespace missing. The fix is really bad but it works. Don't use this.
+
 Use a docx as a jinja2 template
 
 Introduction
